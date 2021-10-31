@@ -1,6 +1,6 @@
 <?php
 
-require "header.htm";
+require "../header.htm";
 
 ?>
 
