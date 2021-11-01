@@ -18,13 +18,10 @@ function showUserList(data) {
 
     const uList = document.getElementById("userList");
     uList.innerHTML = "";
-    console.log(data);
-    console.log(data.length);
-    console.log(data[0]);
 
     for(let i = 0; i < data.length; i++) {
         const li = document.createElement("li");
-        li.innerHTML = data[i]["uemail"];
+        li.innerHTML = data[i];
         uList.appendChild(li);
     }
 

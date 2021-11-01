@@ -11,6 +11,6 @@ require "header.htm";
         <input class="rounded" type="text" name="search" placeholder="Search global users" oninput="searchUser(this.value)">
     </form>
 
-    <ul id="userList"></ul>
+    <ul id="userList" style="list-style-type: none; padding: 0;"></ul>
 
 </div>
