@@ -4,7 +4,7 @@ require "functions.php";
 
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     $name = $_POST['name'];
-    $data = all_users();
+    $data = search_users();
     echo json_encode($data);
 
     /*if($name == "") {
