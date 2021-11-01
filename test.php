@@ -7,5 +7,5 @@ $all = all_users();
 print_r($all);
 
 foreach($all as $i) {
-    echo $i["uemail"];
+    echo $i;
 }
