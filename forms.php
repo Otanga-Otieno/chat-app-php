@@ -7,15 +7,20 @@ if(isset($_POST['signup'])) {
     $email = $_POST['uemail'];
     $passwordHash = password_hash($_POST['upassword'], PASSWORD_DEFAULT);
 
-    echo $email." and ".$passwordHash;
+    create_user($email, $passwordHash);
 
 }
 
 if(isset($_POST['signin'])) {
 
     $email = $_POST['uemail'];
-    $passwordHash = password_hash($_POST['upassword'], PASSWORD_DEFAULT);
+    $password = $_POST['upassword'];
+    $passwordHash = retrievePassword($email);
 
-    echo $email." and ".$passwordHash;
+    if(password_verify($password, $passwordHash)) {
+        login($email);
+    } else {
+        echo "Incorrect password";
+    }
 
 }

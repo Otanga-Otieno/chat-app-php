@@ -53,6 +53,19 @@ function check_active_user($user) {
 
 }
 
+function retrievePassword($user) {
+
+    global $conn;
+    $stmt = $conn->prepare("SELECT passwordHash FROM users WHERE uemail = ?");
+    $stmt->bind_param("s", $user);
+    $stmt->execute();
+    $stmt->bind_result($result);
+    $stmt->fetch();
+    $stmt->close();
+    return $result;
+
+}
+
 function login($user) {
 
     $_SESSION['user'] = $user;
