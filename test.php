@@ -6,6 +6,6 @@ $all = all_users();
 
 print_r($all);
 
-/*foreach($all as $i) {
-    print_r()
-}*/
+foreach($all as $i) {
+    echo $i["uemail"];
+}
