@@ -11,7 +11,7 @@ $all = all_users();
 <div class="container" style="text-align: center;">
 
     <form class="p-3" action="">
-        <input class="rounded" type="text" name="search" placeholder="Search global users" oninput="searchUser(this.value)">
+        <input class="rounded" type="text" name="search" placeholder="Search global users" oninput="searchUser(this.value)" autocomplete="off">
     </form>
 
     <ul id="userList" style="list-style-type: none; padding: 0;">
