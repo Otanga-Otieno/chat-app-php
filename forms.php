@@ -1,6 +1,8 @@
 <?php
 
-if(isset('signup')) {
+require "functions.php";
+
+if(isset $_POST('signup')) {
 
     $email = $_POST['uemail'];
     $passwordHash = password_hash($_POST['upassword']);
@@ -9,7 +11,7 @@ if(isset('signup')) {
 
 }
 
-if(isset('signin')) {
+if(isset $_POST('signin')) {
 
     $email = $_POST['uemail'];
     $passwordHash = password_hash($_POST['upassword']);
