@@ -16,7 +16,7 @@ $all = all_users();
 
     <ul id="userList" style="list-style-type: none; padding: 0;">
     <?php foreach($all as $email) { ?>
-        <li><?php echo $email["uemail"]; ?></li>
+        <li><?php echo $email; ?></li>
     <?php } ?>
     </ul>
 
