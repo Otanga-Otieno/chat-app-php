@@ -81,11 +81,14 @@ function logout() {
 function all_users() {
 
     global $conn;
+    $all = array();
     $stmt = $conn->prepare("SELECT uemail FROM users");
     $stmt->execute();
-    $result = $stmt->get_result();
-    $assoc = $result->fetch_assoc();
-    return $assoc;
+    $stmt->bind_result($result);
+    while($stmt->fetch()) {
+        array_push($all, $result);
+    }
+    return $all;
 
 }
 
