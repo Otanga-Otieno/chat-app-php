@@ -83,9 +83,9 @@ function all_users() {
     global $conn;
     $stmt = $conn->prepare("SELECT uemail FROM users");
     $stmt->execute();
-    $stmt->bind_result($result);
-    $stmt->fetchAll();
-    return $result;
+    $result = $stmt->get_result();
+    $assoc = $result->fetch_assoc();
+    return $assoc;
 
 }
 
