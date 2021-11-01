@@ -4,7 +4,7 @@ require "functions.php";
 
 $all = all_users();
 
-print_r($all);
+//print_r($all);
 
 foreach($all as $i) {
     echo $i;
