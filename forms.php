@@ -15,12 +15,17 @@ if(isset($_POST['signin'])) {
 
     $email = $_POST['uemail'];
     $password = $_POST['upassword'];
-    $passwordHash = retrievePassword($email);
 
-    if(password_verify($password, $passwordHash)) {
-        login($email);
+    if(check_active_user($email)) {
+        $passwordHash = retrievePassword($email);
+
+        if(password_verify($password, $passwordHash)) {
+            login($email);
+        } else {
+            echo "Incorrect password";
+        }   
     } else {
-        echo "Incorrect password";
+        echo "User does not exist";
     }
 
 }
