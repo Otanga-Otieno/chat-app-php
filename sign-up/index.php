@@ -4,9 +4,6 @@ require "../header.htm";
 
 ?>
 
-<body style="background-color: #77d7c8;">
-    
-</body>
 
 <div class="container" style="background-color: #77d7c8;">
     <form class="p-3 rounded uform" action="../forms.php" method="POST">
