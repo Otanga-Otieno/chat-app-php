@@ -95,12 +95,15 @@ function all_users() {
 function search_users($str) {
 
     global $conn;
+    $all = array();
     $regex = "%".$str."%";
     $stmt = $conn->prepare("SELECT uemail FROM users WHERE uemail LIKE ?");
     $stmt->bind_param("s", $regex);
     $stmt->execute();
-    $result = $stmt->get_result();
-    $assoc = $result->fetch_assoc();
-    return $assoc;
+    $stmt->bind_result($result);
+    while($stmt->fetch()) {
+        array_push($all, $result);
+    }
+    return $all;
 
 }
