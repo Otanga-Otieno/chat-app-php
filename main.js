@@ -18,6 +18,7 @@ function showUserList(data) {
 
     const uList = document.getElementById("userList");
     uList.innerHTML = "";
+    console.log(data);
     console.log(data.length);
     console.log(data[0]);
 
