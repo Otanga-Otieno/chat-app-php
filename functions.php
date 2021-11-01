@@ -93,7 +93,7 @@ function search_users($str) {
 
     global $conn;
     $regex = "%".$str."%";
-    $stmt->prepare("SELECT uemail FROM users WHERE uemail LIKE ?");
+    $stmt = $conn->prepare("SELECT uemail FROM users WHERE uemail LIKE ?");
     $stmt->bind_param("s", $regex);
     $stmt->execute();
     $stmt->bind_result($result);
