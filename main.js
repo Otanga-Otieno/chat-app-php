@@ -9,7 +9,7 @@ function fetchSearch(name) {
         body: new URLSearchParams('name=' + name)
     })
     .then(res => res.json())
-    .then(res => console.log(res))
+    .then(res => showUserList(res))
     .catch(e => console.error('Error: ' + e))
 
 }
