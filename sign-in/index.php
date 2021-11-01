@@ -6,7 +6,7 @@ require "../header.htm";
 
 
 <div class="container">
-    <form class="p-3" action="../forms.php" method="POST" style="text-align: center;">
+    <form class="p-3 rounded uform" action="../forms.php" method="POST">
         <span><h3>Sign In</h3></span>
         
         <label for="">
@@ -21,6 +21,6 @@ require "../header.htm";
         </label>
         <br>
 
-        <button class="p-2" type="submit" name="signin">Sign In</button>
+        <button class="m-2 btn" type="submit" style="background-color: #77d7c8;" name="signin">Sign In</button>
     </form>
 </div>

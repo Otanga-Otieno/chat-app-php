@@ -4,9 +4,12 @@ require "../header.htm";
 
 ?>
 
+<body style="background-color: #77d7c8;">
+    
+</body>
 
-<div class="container">
-    <form class="p-3" action="../forms.php" method="POST" style="text-align: center;">
+<div class="container" style="background-color: #77d7c8;">
+    <form class="p-3 rounded uform" action="../forms.php" method="POST">
         <span><h3>Sign Up</h3></span>
         
         <label for="">
@@ -21,6 +24,6 @@ require "../header.htm";
         </label>
         <br>
 
-        <button class="p-2" type="submit" name="signup">Sign Up</button>
+        <button class="m-2 btn" type="submit" style="background-color: #77d7c8;" name="signup">Sign Up</button>
     </form>
 </div>
