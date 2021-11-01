@@ -96,7 +96,8 @@ function search_users($str) {
     $stmt = $conn->prepare("SELECT uemail FROM users WHERE uemail LIKE ?");
     $stmt->bind_param("s", $regex);
     $stmt->execute();
-    $stmt->bind_result($result);
-    $stmt->fetchAll();
+    $result = $stmt->get_result();
+    $assoc = $result->fetch_assoc();
+    return $assoc;
 
 }
