@@ -2,4 +2,4 @@
 
 require "functions.php";
 
-print_r(search_users("al"));
+print_r(json_encode(search_users("al")));
