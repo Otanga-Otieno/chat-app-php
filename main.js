@@ -22,8 +22,10 @@ function showUserList(data) {
 
     for(let i = 0; i < data.length; i++) {
         const li = document.createElement("li");
+        const hr = document.createElement("hr");
         li.innerHTML = data[i];
         uList.appendChild(li);
+        uList.appendChild(hr);
     }
 
 }
