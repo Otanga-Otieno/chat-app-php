@@ -2,7 +2,7 @@
 
 require "functions.php";
 
-print_r(search_users("j"));
+print_r(search_users(""));
 
 /*$all = all_users();
 
