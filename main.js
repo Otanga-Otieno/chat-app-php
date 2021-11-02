@@ -20,6 +20,9 @@ function showUserList(data) {
     uList.innerHTML = "";
     console.log(data);
 
+    const sli = document.createElement("li");
+    uList.appendChild(sli);
+
     for(let i = 0; i < data.length; i++) {
         const li = document.createElement("li");
         const hr = document.createElement("hr");
