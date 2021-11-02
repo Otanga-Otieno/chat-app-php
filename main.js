@@ -9,22 +9,20 @@ function fetchSearch(name) {
         body: new URLSearchParams('name=' + name)
     })
     .then(res => res.json())
-    .then(res => showUserList(res, name))
+    .then(res => showUserList(res))
     .catch(e => console.error('Error: ' + e))
 
 }
 
-function showUserList(data, name) {
+function showUserList(data) {
 
     const uList = document.getElementById("userList");
     uList.innerHTML = "";
 
-    if(("".localeCompare(name)) == 0) {
-        const sli = document.createElement("li");
-        const shr = document.createElement("hr");
-        uList.appendChild(sli);
-        uList.appendChild(shr);
-    }
+    const sli = document.createElement("li");
+    const shr = document.createElement("hr");
+    uList.appendChild(sli);
+    uList.appendChild(shr);
 
     for(let i = 0; i < data.length; i++) {
         const li = document.createElement("li");
