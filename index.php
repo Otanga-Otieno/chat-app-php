@@ -15,7 +15,7 @@ $all = all_users();
             <input class="rounded" style="width: 100%;" type="text" name="search" placeholder="Search global users" oninput="searchUser(this.value)" autocomplete="off">
         </form>
     
-        <ul class="mt-0" id="userList" style="list-style-type: none; padding: 0; background-color: black; color: white; width: 100%;">
+        <ul class="mt-1" id="userList" style="list-style-type: none; padding: 0; background-color: black; color: white; width: 100%;">
         <?php foreach($all as $email) { ?>
             <li><?php echo $email; ?></li><hr>
         <?php } ?>
