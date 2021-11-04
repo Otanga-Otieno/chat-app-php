@@ -18,7 +18,7 @@ $all = all_users();
         <ul class="p-2" id="userList" style="list-style-type: none; padding: 0; background-color: black; color: white; width: 100%;">
             <li></li><hr>
         <?php foreach($all as $email) { ?>
-            <li><?php echo $email; ?></li><hr>
+            <li><a href="chat/?to='<?php echo $email; ?>'"></a><?php echo $email; ?></li><hr>
         <?php } ?>
         </ul>
     </div>

@@ -27,8 +27,12 @@ function showUserList(data) {
     for(let i = 0; i < data.length; i++) {
         const li = document.createElement("li");
         const hr = document.createElement("hr");
-        li.innerHTML = data[i];
+        const a = document.createElement("a");
+
+        a.innerHTML = data[i];
+        a.href = "chat/?to='" + data[i] + "'";
         uList.appendChild(li);
+        li.appendChild(a);
         uList.appendChild(hr);
     }
 
