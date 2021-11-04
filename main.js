@@ -30,7 +30,7 @@ function showUserList(data) {
         const a = document.createElement("a");
 
         a.innerHTML = data[i];
-        a.href = "chat/?to='" + data[i] + "'";
+        a.href = "chat/?to=" + data[i];
         uList.appendChild(li);
         li.appendChild(a);
         uList.appendChild(hr);
