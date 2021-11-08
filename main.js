@@ -44,7 +44,7 @@ function sendText(text) {
 
 function postMessage(text) {
 
-    fetch('../messageapi.php', {
+    fetch('messageapi.php', {
         method: 'POST',
         body: new URLSearchParams('message=' + text)
     })
