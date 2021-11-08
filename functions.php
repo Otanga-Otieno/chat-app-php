@@ -78,6 +78,14 @@ function logout() {
 
 }
 
+function must_login($redirect) {
+
+    if(!(isset($_SESSION['user']))) {
+        header("Location: ".$redirect);
+    }
+
+}
+
 function all_users() {
 
     global $conn;
