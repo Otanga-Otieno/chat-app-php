@@ -20,7 +20,7 @@ $to = $_GET['to'];
                 <input class="rounded" id="msg" type="text" placeholder="Type a message" style="width: 75%; color: black; display: inline-block;">
                 <input type="text" name="receiver" value="<?php echo $to; ?>" hidden>
                 <input type="text" name="sender" value="<?php echo $_SESSION['user']; ?>" hidden>
-                <span name="sendMessage"  onclick="sendText(document.getElementById(msg).value); return false;" style="width: 20%; display: inline-block; background-color: transparent; border: none;"><i class="fas fa-paper-plane" style="display: inline;"></i></span>
+                <span name="sendMessage"  onclick="sendText(document.getElementById('msg').value); return false;" style="width: 20%; display: inline-block; background-color: transparent; border: none;"><i class="fas fa-paper-plane" style="display: inline;"></i></span>
             </form>
         </div>
     </div>
