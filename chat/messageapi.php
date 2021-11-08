@@ -8,7 +8,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $sender = $_POST['sender'];
     $receiver = $_POST['receiver'];
 
-    //$timestamp = time();
     $cipher = "aes-128-gcm";
     $key = bin2hex(openssl_random_pseudo_bytes(10));
     $ivlen = openssl_cipher_iv_length($cipher);
