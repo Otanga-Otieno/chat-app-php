@@ -10,10 +10,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $timestamp = time();
     $cipher = "aes-128-gcm";
-    $key = openssl_random_pseudo_bytes(10);
+    $key = bin2hex(openssl_random_pseudo_bytes(10));
     $ivlen = openssl_cipher_iv_length($cipher);
-    $iv = openssl_random_pseudo_bytes($ivlen);
-    $tag = openssl_random_pseudo_bytes(10);
+    $iv = bin2hex(openssl_random_pseudo_bytes($ivlen));
+    $tag = bin2hex(openssl_random_pseudo_bytes(10));
     $enc = openssl_encrypt($message, $cipher, $key, $options=0, $iv, $tag);
 
     insert_chat($sender, $receiver, $enc, $key, $iv, $tag, $timestamp);
