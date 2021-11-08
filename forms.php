@@ -21,6 +21,7 @@ if(isset($_POST['signin'])) {
 
         if(password_verify($password, $passwordHash)) {
             login($email);
+            header("Location: ./");
         } else {
             echo "Incorrect password";
         }   
