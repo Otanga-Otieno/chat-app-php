@@ -37,3 +37,16 @@ function showUserList(data) {
     }
 
 }
+
+function sendText(text) {
+    postMessage(text);
+}
+
+function postMessage(text) {
+
+    fetch('../messageapi.php', {
+        method: 'POST',
+        body: new URLSearchParams('message=' + text)
+    })
+
+}

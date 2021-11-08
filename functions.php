@@ -107,3 +107,13 @@ function search_users($str) {
     return $all;
 
 }
+
+function insert_chat($sender, $receiver, $encryptedMessage, $key, $iv, $tag, $timestamp) {
+
+    global $conn;
+    $stmt = $conn->prepare("INSERT INTO chat(sender, receiver, encrypted_message, passphrase, iv, tag, timest) VALUES(?,?,?,?,?,?,?)");
+    $stmt->bind_param("sssssss", $sender, $receiver, $encryptedMessage, $key, $iv, $tag, $timestamp);
+    $stmt->execute();
+    $stmt->close();
+
+} 
