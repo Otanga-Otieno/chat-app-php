@@ -17,7 +17,8 @@ $to = $_GET['to'];
         <div style="background-color: white; height: 70vh; width: 100%;"></div>
         <div style="background-color: #77d7c8; width: 100%;">
             <form action="">
-                <input class="rounded" type="text" placeholder="Type a message" style="width: 100%; color: black;">
+                <input class="rounded" type="text" placeholder="Type a message" style="width: 80%; color: black;">
+                <i class="fas fa-paper-plane" style="width: 20%;"><button type="submit" name="sendMessage"></button></i>
             </form>
         </div>
     </div>
