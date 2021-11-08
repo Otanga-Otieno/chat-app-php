@@ -39,13 +39,16 @@ function showUserList(data) {
 }
 
 function sendText() {
+
     const message = document.getElementById('msg').value;
     const receiver = document.getElementById('rec').value;
     const sender = document.getElementById('sen').value
     postMessage(sender, receiver, message);
+
 }
 
 function postMessage(sender, receiver, message) {
+
     var bodyParams = new URLSearchParams('message=' + message);
     bodyParams.append("sender", sender);
     bodyParams.append("receiver", receiver);
@@ -54,7 +57,14 @@ function postMessage(sender, receiver, message) {
         method: 'POST',
         body: bodyParams
     })
-    .then(res => res.json())
+    .then(res => updateMessage())
     .catch(e => console.error('Error: ' + e))
+
+}
+
+function updateMessage() {
+
+    const textbox = document.getElementById("msg");
+    msg.value = "";
 
 }
