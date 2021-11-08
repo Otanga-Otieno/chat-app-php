@@ -18,4 +18,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 
     insert_chat($sender, $receiver, $enc, $key, $iv, $tag, $timestamp);
 
+    echo json_encode($enc);
+
 }

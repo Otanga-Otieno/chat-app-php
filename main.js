@@ -47,12 +47,14 @@ function sendText() {
 
 function postMessage(sender, receiver, message) {
     var bodyParams = new URLSearchParams('message=' + message);
-    bodyParams.append("sender=" + sender);
-    bodyParams.append("receiver=" + receiver);
+    bodyParams.append("sender", sender);
+    bodyParams.append("receiver", receiver);
 
     fetch('messageapi.php', {
         method: 'POST',
         body: bodyParams
     })
+    .then(res => res.json())
+    .catch(e => console.error('Error: ' + e))
 
 }
