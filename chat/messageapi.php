@@ -12,7 +12,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $key = bin2hex(openssl_random_pseudo_bytes(10));
     $ivlen = openssl_cipher_iv_length($cipher);
     $iv = bin2hex(openssl_random_pseudo_bytes($ivlen));
-    $tag = bin2hex(openssl_random_pseudo_bytes(10));
+    $rawtag = openssl_random_pseudo_bytes(10);
+    $tag = bin2hex($rawtag);
     $enc = openssl_encrypt($message, $cipher, $key, $options=0, $iv, $tag);
 
     insert_chat($sender, $receiver, $enc, $key, $iv, $tag);
