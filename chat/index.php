@@ -16,11 +16,11 @@ $to = $_GET['to'];
         </div>
         <div style="background-color: white; height: 70vh; width: 100%;"></div>
         <div style="background-color: #77d7c8; width: 100%;">
-            <form action="" onsubmit="sendText(document.getElementById(msg).value); return false;">
+            <form action="">
                 <input class="rounded" id="msg" type="text" placeholder="Type a message" style="width: 75%; color: black; display: inline-block;">
                 <input type="text" name="receiver" value="<?php echo $to; ?>" hidden>
                 <input type="text" name="sender" value="<?php echo $_SESSION['user']; ?>" hidden>
-                <button name="sendMessage" style="width: 20%; display: inline-block; background-color: transparent; border: none;"><i class="fas fa-paper-plane" style="display: inline;"></i></button>
+                <button name="sendMessage"  onclick="sendText(document.getElementById(msg).value); return false;" style="width: 20%; display: inline-block; background-color: transparent; border: none;"><i class="fas fa-paper-plane" style="display: inline;"></i></button>
             </form>
         </div>
     </div>
