@@ -38,15 +38,21 @@ function showUserList(data) {
 
 }
 
-function sendText(text) {
-    postMessage(text);
+function sendText() {
+    const message = document.getElementById('msg').value;
+    const receiver = document.getElementById('rec').value;
+    const sender = document.getElementById('sen').value
+    postMessage(sender, receiver, message);
 }
 
-function postMessage(text) {
+function postMessage(sender, receiver, message) {
+    var bodyParams = new URLSearchParams('message=' + message);
+    bodyParams.append("sender=" + sender);
+    bodyParams.append("receiver=" + receiver);
 
     fetch('messageapi.php', {
         method: 'POST',
-        body: new URLSearchParams('message=' + text)
+        body: bodyParams
     })
 
 }
