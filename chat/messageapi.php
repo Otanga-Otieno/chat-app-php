@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $tag = bin2hex($rawtag);
     $enc = openssl_encrypt($message, $cipher, $key, $options=0, $iv, $tag);
 
-    insert_chat($sender, $receiver, $enc, $key, $iv, $tag);
+    insert_chat($sender, $receiver, $enc, $key, $iv, hex2bin($tag));
 
     echo json_encode($enc);
 
