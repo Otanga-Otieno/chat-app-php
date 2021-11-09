@@ -132,7 +132,8 @@ function get_chats($user1, $user2) {
     $stmt = $conn->prepare("SELECT sender, receiver, encrypted_message, passphrase, iv, tag, timest FROM chat WHERE sender = ? AND receiver = ? OR sender = ? AND receiver = ?");
     $stmt->bind_param("ssss", $user1, $user2, $user2, $user1);
     $stmt->execute();
-    $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $stmt->get_result();
+    $array = $result->fetchAll(PDO::FETCH_ASSOC);
     print_r($array);
 
 }
