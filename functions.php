@@ -140,7 +140,7 @@ function get_chats($user1, $user2) {
     foreach($array as $row) {
         $sender = $row[0];
         $receiver = $row[1];
-        $tag = $row[5];
+        $tag = hex2bin($row[5]);
         $message = openssl_decrypt($row[2], $cipher, $row[3], $options=0, $row[4], $tag);
 
         if($sender == $user1) {
