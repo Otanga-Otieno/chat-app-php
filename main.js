@@ -87,7 +87,7 @@ function updateMessage(message) {
 
 async function livereceiver() {
     
-    let response = await fetch("livereceiverapi.php");
+    let response = await fetch("chat/livereceiverapi.php");
 
     if(response.status == 502) {
         await livereceiver();
