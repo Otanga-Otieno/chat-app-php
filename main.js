@@ -58,6 +58,7 @@ function postMessage(sender, receiver, message) {
         body: bodyParams
     })
     .then(res => updateMessage(message))
+    .then(res => livereceiving(sender, receiver))
     .catch(e => console.error('Error: ' + e))
 
 }
