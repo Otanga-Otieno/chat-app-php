@@ -129,11 +129,29 @@ function insert_chat($sender, $receiver, $encryptedMessage, $key, $iv, $tag) {
 function get_chats($user1, $user2) {
 
     global $conn;
+    $cipher = "aes-128-gcm";
+
     $stmt = $conn->prepare("SELECT sender, receiver, encrypted_message, passphrase, iv, tag, timest FROM chat WHERE sender = ? AND receiver = ? OR sender = ? AND receiver = ?");
     $stmt->bind_param("ssss", $user1, $user2, $user2, $user1);
     $stmt->execute();
     $result = $stmt->get_result();
     $array = $result->fetch_all();
-    print_r($array);
+    
+    foreach($array as $row) {
+        $sender = $row[0];
+        $receiver = $row[1];
+        $tag = $row[5];
+        $message = openssl_decrypt($row[2], $cipher, $row[3], $options=0, $row[4], $tag);
+
+        if($sender == $user1) {
+            echo "
+                <span class='rounded p-1 m-2' style='display: block; float: right; background-color: #dcf8c6;'>".$message."</span>
+            ";
+        } else {
+            echo "
+                <span class='rounded p-1 m-2' style='display: block; float: left; background-color: #dcf8c6;'>".$message."</span>
+            ";
+        }
+    }
 
 }
