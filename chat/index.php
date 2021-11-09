@@ -9,7 +9,7 @@ $sender = $_SESSION['user'];
 
 ?>
 
-<script>livereceiver("<?php echo $sender; ?>", "<?php echo $receiver; ?>");</script>
+<script onload='livereceiver("<?php echo $sender; ?>", "<?php echo $receiver; ?>");'></script>
 
 <div class="container">
     
