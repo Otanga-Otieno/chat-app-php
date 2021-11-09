@@ -127,3 +127,7 @@ async function livereceiver(user, receiver) {
     }
     
 }
+
+function livereceiving(user, receiver) {
+    livereceiver(user, receiver);
+}
