@@ -8,6 +8,4 @@ $receiver = "jvn@mit";
 
 ?>
 
-<script>
-    livereceiver("<?php echo $sender; ?>", "<?php echo $receiver; ?>")
-</script>
+<button class="btn" onclick='livereceiver("<?php echo $sender; ?>", "<?php echo $receiver; ?>");'>PRESS</button>
