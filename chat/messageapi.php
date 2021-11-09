@@ -2,7 +2,7 @@
 
 require "../functions.php";
 
-if($_SERVER['REQUEST_METHOD'] == "POST") {
+if(($_SERVER['REQUEST_METHOD'] == "POST") && isset($_POST['message'])) {
 
     $message = $_POST['message'];
     $sender = $_POST['sender'];
