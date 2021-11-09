@@ -163,7 +163,7 @@ function get_latest_chat_id($sender, $receiver) {
     $stmt->bind_param("ss", $sender, $receiver);
     $stmt->execute();
     $stmt->bind_result($result);
-    echo "running";
+    echo $sender." ".$receiver;
     return $result;
 
 }
