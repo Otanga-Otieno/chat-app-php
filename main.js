@@ -57,14 +57,30 @@ function postMessage(sender, receiver, message) {
         method: 'POST',
         body: bodyParams
     })
-    .then(res => updateMessage())
+    .then(res => updateMessage(message))
     .catch(e => console.error('Error: ' + e))
 
 }
 
-function updateMessage() {
+function updateMessage(message) {
 
     const textbox = document.getElementById("msg");
     msg.value = "";
+
+    const chatbox = document.getElementById("chatbox");
+    const span = document.createElement("span");
+    const br = document.createElement("br");
+
+    span.innerHTML = message;
+    span.classList.add("rounded");
+    span.classList.add("p-1");
+    span.style.display = "block";
+    span.style.width = "fit-content";
+    span.style.marginLeft = "auto";
+    span.style.marginRight = "0";
+    span.style.backgroundColor = "#dcf8c6";
+
+    chatbox.appendChild(span);
+    chatbox.appendChild(br);
 
 }

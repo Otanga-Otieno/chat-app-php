@@ -16,7 +16,7 @@ $sender = $_SESSION['user'];
         <div style="background-color: #77d7c8; text-align: center; width: 100%;">
             <span><h3 style="color: white;"><?php echo $receiver; ?></h3></span>
         </div>
-        <div class="p-2" style="background-color: white; height: 70vh; width: 100%;">
+        <div class="p-2" id="chatbox" style="background-color: white; height: 70vh; width: 100%;">
             <?php get_chats($sender, $receiver); ?>
         </div>
         <div style="background-color: #77d7c8; width: 100%;">
