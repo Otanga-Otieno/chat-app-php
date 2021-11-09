@@ -162,8 +162,8 @@ function get_latest_chat_id($sender, $receiver) {
     $stmt = $conn->prepare("SELECT id FROM chat WHERE sender = ? AND receiver = ? ORDER BY id DESC LIMIT 1");
     $stmt->bind_param("ss", $sender, $receiver);
     $stmt->execute();
-    $stmt->bind_result($result);
-    echo $sender." ".$receiver;
+    $result = $stmt->get_result();
+    print_r($result);
     return $result;
 
 }
