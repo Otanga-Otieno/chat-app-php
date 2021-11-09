@@ -65,7 +65,7 @@ function postMessage(sender, receiver, message) {
 function updateMessage(message) {
 
     const textbox = document.getElementById("msg");
-    msg.value = "";
+    textbox.value = "";
 
     const chatbox = document.getElementById("chatbox");
     const span = document.createElement("span");
@@ -79,6 +79,26 @@ function updateMessage(message) {
     span.style.marginLeft = "auto";
     span.style.marginRight = "0";
     span.style.backgroundColor = "#dcf8c6";
+
+    chatbox.appendChild(span);
+    chatbox.appendChild(br);
+
+}
+
+function receiveMessage(message) {
+
+    const chatbox = document.getElementById("chatbox");
+    const span = document.createElement("span");
+    const br = document.createElement("br");
+
+    span.innerHTML = message;
+    span.classList.add("rounded");
+    span.classList.add("p-1");
+    span.style.display = "block";
+    span.style.width = "fit-content";
+    span.style.marginLeft = "auto";
+    span.style.marginRight = "0";
+    span.style.backgroundColor = "#fff5c4";
 
     chatbox.appendChild(span);
     chatbox.appendChild(br);
@@ -102,7 +122,7 @@ async function livereceiver(user, receiver) {
         await livereceiver(user, receiver);
     } else {
         let message = await response.text();
-        console.log(message);
+        receiveMessage(message);
         await livereceiver(user, receiver);
     }
     
