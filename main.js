@@ -84,3 +84,20 @@ function updateMessage(message) {
     chatbox.appendChild(br);
 
 }
+
+async function livereceiver() {
+    
+    let response = await fetch("livereceiverapi.php");
+
+    if(response.status == 502) {
+        await livereceiver();
+    } else if(response.status != 200) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        await livereceiver();
+    } else {
+        let message = await response.text();
+        console.log(message);
+        await livereceiver();
+    }
+    
+}

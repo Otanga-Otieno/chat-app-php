@@ -1,5 +1,11 @@
 <?php
 
 require "functions.php";
+require "header.htm";
 
-get_chats("alvin@otanga.co.ke", "jvn@mit");
+?>
+
+<script>
+    livereceiver();
+</script>
+<button class="btn">PRESS</button>
