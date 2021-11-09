@@ -9,9 +9,9 @@ $sender = $_SESSION['user'];
 
 ?>
 
-<script onload='livereceiver("<?php echo $sender; ?>", "<?php echo $receiver; ?>");'></script>
+<script ></script>
 
-<div class="container">
+<div class="container" onload='livereceiver("<?php echo $sender; ?>", "<?php echo $receiver; ?>");'>
     
     <div class="m-5 rounded" style="border: white solid 1px;">
         <div style="background-color: #77d7c8; text-align: center; width: 100%;">
