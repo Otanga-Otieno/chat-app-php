@@ -1,6 +1,6 @@
 <?php
 
-while(true) {
+if($_SERVER['REQUEST_METHOD'] == "POST") {
 
     echo $_POST['user'];
 
