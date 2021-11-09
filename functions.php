@@ -155,3 +155,15 @@ function get_chats($user1, $user2) {
     }
 
 }
+
+function get_latest_chat_id($sender, $receiver) {
+
+    global $conn;
+    $limit = 1;
+    $stmt = $conn->prepare("SELECT id FROM chat WHERE sender = ? AND receiver = ? ORDER BY id LIMIT ?");
+    $stmt->bind_param("ssi", $sender, $receiver, $limit);
+    $stmt->execute();
+    $stmt->bind_result($result);
+    return $result;
+
+}
