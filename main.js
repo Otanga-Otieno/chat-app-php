@@ -110,7 +110,7 @@ async function livereceiver(user, receiver) {
     var bodyParams = new URLSearchParams('user=' + user);
     bodyParams.append("receiver", receiver);
 
-    let response = await fetch("chat/livereceiverapi.php", {
+    let response = await fetch("livereceiverapi.php", {
         method: 'POST',
         body: bodyParams
     })
