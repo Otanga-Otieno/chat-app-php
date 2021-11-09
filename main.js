@@ -93,14 +93,14 @@ async function livereceiver(user) {
     })
 
     if(response.status == 502) {
-        await livereceiver();
+        await livereceiver(user);
     } else if(response.status != 200) {
         await new Promise(resolve => setTimeout(resolve, 1000));
-        await livereceiver();
+        await livereceiver(user);
     } else {
         let message = await response.text();
         console.log(message);
-        await livereceiver();
+        await livereceiver(user);
     }
     
 }
