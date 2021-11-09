@@ -133,6 +133,7 @@ function get_chats($user1, $user2) {
     $stmt->bind_param("ssss", $user1, $user2, $user2, $user1);
     $stmt->execute();
     $result = $stmt->get_result();
-    print_r($result);
+    $array = $result->fetch_all();
+    print_r($array);
 
 }
