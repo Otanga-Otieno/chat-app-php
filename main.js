@@ -115,7 +115,7 @@ async function livereceiver(user, receiver) {
         body: bodyParams
     })
 
-    if(response.status == 502) {
+    if(response.status == 500) {
         await livereceiver(user, receiver);
     } else if(response.status != 200) {
         await new Promise(resolve => setTimeout(resolve, 1000));
