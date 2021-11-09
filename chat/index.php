@@ -15,7 +15,9 @@ $to = $_GET['to'];
         <div style="background-color: #77d7c8; text-align: center; width: 100%;">
             <span><h3 style="color: white;"><?php echo $to; ?></h3></span>
         </div>
-        <div style="background-color: white; height: 70vh; width: 100%;"></div>
+        <div style="background-color: white; height: 70vh; width: 100%;">
+            <?php ?>
+        </div>
         <div style="background-color: #77d7c8; width: 100%;">
             <form action="">
                 <input class="rounded" id="msg" type="text" placeholder="Type a message" style="width: 75%; color: black; display: inline-block;">

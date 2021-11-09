@@ -124,4 +124,15 @@ function insert_chat($sender, $receiver, $encryptedMessage, $key, $iv, $tag) {
     $stmt->execute();
     $stmt->close();
 
-} 
+}
+
+function get_chats($user1, $user2) {
+
+    global $conn;
+    $stmt = $conn->prepare("SELECT sender, receiver, encrypted_message, passphrase, iv, tag, timest FROM chat WHERE sender = ? AND receiver = ? OR sender = ? AND reciever = ?");
+    $stmt->bind_param("ssss", $user1, $user2, $user2, $user1);
+    $stmt->execute();
+    $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    print_r($array);
+
+}
