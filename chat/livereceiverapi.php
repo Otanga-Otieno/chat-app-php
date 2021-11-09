@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 
         $new_id = get_latest_chat_id($sender, $receiver);
 
-        if($new_id != $latest_id) {
+        if($new_id == $latest_id) {
             echo "works";
             break;
         }
