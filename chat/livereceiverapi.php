@@ -7,16 +7,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $sender = $_POST['user'];
     $receiver = $_POST['receiver'];
     $latest_id = get_latest_chat_id($sender, $receiver);
+    $new_id = get_latest_chat_id($sender, $receiver);
 
-    while (true) {
+    while ($latest_id == $new_id) {
 
+        sleep(3000);
         $new_id = get_latest_chat_id($sender, $receiver);
-
-        if($new_id != $latest_id) {
-            echo get_chat($new_id);
-            break;
-        }
         
     }
+    
+    echo get_chat($new_id);
 
 }
