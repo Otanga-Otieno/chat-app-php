@@ -145,11 +145,11 @@ function get_chats($user1, $user2) {
 
         if($sender == $user1) {
             echo "
-                <span class='rounded p-1 m-2' style='display: inline-block; margin-left: auto !important; margin-right: 0 !important; background-color: #dcf8c6;'>".$message."</span><br>
+                <span class='rounded p-1 m-2' style='display: inline-block; text-align: end; background-color: #dcf8c6;'>".$message."</span><br>
             ";
         } else {
             echo "
-                <span class='rounded p-1 m-2' style='display: inline-block; margin-right: auto !important; margin-left: 0 !important; background-color:  #fff5c4;'>".$message."</span><br>
+                <span class='rounded p-1 m-2' style='display: inline-block; text-align: start; background-color:  #fff5c4;'>".$message."</span><br>
             ";
         }
     }
