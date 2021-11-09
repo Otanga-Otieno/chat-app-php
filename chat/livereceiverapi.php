@@ -1,3 +1,3 @@
 <?php
 
-echo json_encode($_POST['user']);
+echo $_POST['user'];
