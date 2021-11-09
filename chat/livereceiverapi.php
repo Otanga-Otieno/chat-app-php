@@ -1,3 +1,7 @@
 <?php
 
-echo $_POST['user'];
+while(true) {
+
+    echo $_POST['user'];
+
+}
