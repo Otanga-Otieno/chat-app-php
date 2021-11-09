@@ -85,22 +85,25 @@ function updateMessage(message) {
 
 }
 
-async function livereceiver(user) {
+async function livereceiver(user, receiver) {
     
+    var bodyParams = new URLSearchParams('user=' + user);
+    bodyParams.append("receiver", receiver);
+
     let response = await fetch("chat/livereceiverapi.php", {
         method: 'POST',
-        body: new URLSearchParams('user=' + user)
+        body: bodyParams
     })
 
     if(response.status == 502) {
-        await livereceiver(user);
+        await livereceiver(user, receiver);
     } else if(response.status != 200) {
         await new Promise(resolve => setTimeout(resolve, 1000));
-        await livereceiver(user);
+        await livereceiver(user, receiver);
     } else {
         let message = await response.text();
         console.log(message);
-        await livereceiver(user);
+        await livereceiver(user, receiver);
     }
     
 }
