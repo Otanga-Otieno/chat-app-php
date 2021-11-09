@@ -6,6 +6,6 @@ require "functions.php";
 $sender = "alvin@otanga.co.ke";
 $receiver = "jvn@mit";
 $id = get_latest_chat_id($sender, $receiver);
-echo nl2br("\n".gettype($id));
+echo $id;
 
 
