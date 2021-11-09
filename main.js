@@ -90,7 +90,8 @@ async function livereceiver(user) {
     let response = await fetch("chat/livereceiverapi.php", {
         method: 'POST',
         body: new URLSearchParams('user=' + user)
-    });
+    })
+    .then(res => console.log(res))
 
     if(response.status == 502) {
         await livereceiver();
