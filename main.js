@@ -124,9 +124,14 @@ async function livereceiver(user, receiver) {
         await new Promise(resolve => setTimeout(resolve, 1000));
         await livereceiver(user, receiver);
     } else {
-        let message = await response.text();
-        receiveMessage(message);
-        await livereceiver(user, receiver);
+        if(response.text().length > 0) {
+            let message = await response.text();
+            receiveMessage(message);
+            await livereceiver(user, receiver);
+        } else {
+            await livereceiver(user, receiver);
+        }
+
     }
     
 }
