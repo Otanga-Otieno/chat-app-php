@@ -88,6 +88,10 @@ function updateMessage(message) {
 
 function receiveMessage(message) {
 
+    if(message.length < 1) {
+        return;
+    }
+
     const chatbox = document.getElementById("chatbox");
     const span = document.createElement("span");
     const br = document.createElement("br");
@@ -130,16 +134,11 @@ async function livereceiver(user, receiver) {
 
     } else {
 
-        var res2 = response;
-        var data2 = res2.text();
+        var data = response.json();
 
-        if((await data2).length > 0) {
-            var data = response.json();
-            
-            data
-            .then(res => receiveMessage(res[0]))
-            .then(res => latestChat.textContent = res[1]);
-        }
+        data
+        .then(res => receiveMessage(res[0]))
+        .then(latestChat.textContent = res[1]);
         await livereceiver(user, receiver);
 
     }
