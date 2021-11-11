@@ -136,11 +136,12 @@ async function livereceiver(user, receiver) {
 
         var data = response.json();
 
-        if(Object.keys(data).length > 0) {
+        console.log(Object.keys(data).length);
+        /*if(Object.keys(data).length > 0) {
             data
             .then(res => receiveMessage(res[0]))
             .then(latestChat.textContent = res[1]);
-        }
+        }*/
 
         await livereceiver(user, receiver);
 
