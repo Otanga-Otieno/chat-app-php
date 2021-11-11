@@ -97,8 +97,8 @@ function receiveMessage(message) {
     span.classList.add("p-1");
     span.style.display = "block";
     span.style.width = "fit-content";
-    span.style.marginLeft = "auto";
-    span.style.marginRight = "0";
+    span.style.marginLeft = "0";
+    span.style.marginRight = "auto";
     span.style.backgroundColor = "#fff5c4";
 
     chatbox.appendChild(span);
@@ -135,7 +135,7 @@ async function livereceiver(user, receiver) {
             data.then(res => receiveMessage(res));
         }
         await livereceiver(user, receiver);
-        
+
     }
     
 }
