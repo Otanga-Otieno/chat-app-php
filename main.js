@@ -119,13 +119,23 @@ async function livereceiver(user, receiver) {
     })
 
     if(response.status == 500) {
+
         await livereceiver(user, receiver);
+
     } else if(response.status != 200) {
+
         await new Promise(resolve => setTimeout(resolve, 1000));
         await livereceiver(user, receiver);
+
     } else {
-        response.text().then(res => console.log(res));
+
+        var data = response.text();
+
+        if((await data).length > 0) {
+            data.then(res => receiveMessage(res));
+        }
         await livereceiver(user, receiver);
+        
     }
     
 }
