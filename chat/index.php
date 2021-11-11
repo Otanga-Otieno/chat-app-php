@@ -21,7 +21,7 @@ $sender = $_SESSION['user'];
             </div>
             <div class="p-2" id="chatbox" style="background-color: white; height: 70vh; width: 100%; overflow-y: scroll;">
                 <?php get_chats($sender, $receiver); ?>
-                <span id="lcid" hidden><?php get_latest_chat_id($sender, $receiver); ?></span>
+                <span id="lcid" hidden><?php echo get_latest_chat_id($sender, $receiver); ?></span>
             </div>
             <div style="background-color: #77d7c8; width: 100%;">
                 <form action="">
