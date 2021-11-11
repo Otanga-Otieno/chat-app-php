@@ -126,7 +126,7 @@ async function livereceiver(user, receiver) {
     } else {
         if(response.text().length > 0) {
             let message = await response.text();
-            //receiveMessage(message);
+            receiveMessage(message);
             console.log(response)
             await livereceiver(user, receiver);
         } else {
