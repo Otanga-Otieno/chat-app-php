@@ -130,7 +130,7 @@ async function livereceiver(user, receiver) {
 
     } else {
 
-        var data = response.text();
+        var data = response.json();
 
         if((await data).length > 0) {
             data
