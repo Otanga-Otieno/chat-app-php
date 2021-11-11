@@ -134,7 +134,7 @@ async function livereceiver(user, receiver) {
 
         if((await data).length > 0) {
             data
-            .then(res => res.json)
+            .then(res => res.json())
             .then(res => receiveMessage(res[0]))
             .then(latestChat.textContent = res[1]);
         }
