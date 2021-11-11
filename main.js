@@ -108,7 +108,8 @@ function receiveMessage(message) {
 
 async function livereceiver(user, receiver) {
     
-    var lcid = document.getElementById("lcid").textContent;
+    var latestChat = document.getElementById("lcid");
+    var lcid = latestChat.textContent;
     var bodyParams = new URLSearchParams('user=' + user);
     bodyParams.append("receiver", receiver);
     bodyParams.append("lcid", lcid);
@@ -132,7 +133,10 @@ async function livereceiver(user, receiver) {
         var data = response.text();
 
         if((await data).length > 0) {
-            data.then(res => receiveMessage(res));
+            data
+            .then(res => res.json)
+            .then(res => receiveMessage(res[0]))
+            .then(latestChat.textContent = res[1]);
         }
         await livereceiver(user, receiver);
 
