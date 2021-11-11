@@ -9,6 +9,8 @@ if(($_SERVER['REQUEST_METHOD'] == "POST") && isset($_POST['lcid'])) {
     $latest_id = $_POST['lcid'];
     $new_id = get_latest_chat_id($receiver, $sender);
 
-    echo get_chat($new_id);
+    if($latest_id != $new_id) {
+        echo get_chat($new_id);
+    }
 
 }
