@@ -130,11 +130,12 @@ async function livereceiver(user, receiver) {
 
     } else {
 
-        var data = response.json();
+        var dataText = response.text();
 
-        if((await data).length > 0) {
+        if((await dataText).length > 0) {
+            var data = response.json();
+            
             data
-            .then(res => res.json())
             .then(res => receiveMessage(res[0]))
             .then(latestChat.textContent = res[1]);
         }
