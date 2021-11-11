@@ -95,7 +95,6 @@ function receiveMessage(message, id) {
     const chatbox = document.getElementById("chatbox");
     const span = document.createElement("span");
     const br = document.createElement("br");
-    var latestChat = document.getElementById("lcid");
 
     span.innerHTML = message;
     span.classList.add("rounded");
@@ -108,7 +107,6 @@ function receiveMessage(message, id) {
 
     chatbox.appendChild(span);
     chatbox.appendChild(br);
-    latestChat.textContent = id;
 
 }
 
@@ -140,6 +138,10 @@ async function livereceiver(user, receiver) {
 
         data
         .then(res => receiveMessage(res[0], res[1]))
+        
+        if(res[0].length > 0) {
+            latestChat.textContent = id;
+        }
 
         await livereceiver(user, receiver);
 
