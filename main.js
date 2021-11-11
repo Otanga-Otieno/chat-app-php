@@ -136,7 +136,7 @@ async function livereceiver(user, receiver) {
 
         var data = response.json();
 
-        console.log(Object.getOwnPropertyNames(data).length);
+        console.log(data);
 
         await livereceiver(user, receiver);
 
