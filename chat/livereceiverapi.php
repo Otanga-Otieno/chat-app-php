@@ -13,6 +13,8 @@ if(($_SERVER['REQUEST_METHOD'] == "POST") && isset($_POST['lcid'])) {
         $message = get_chat($new_id);
         $arr = [$message, $new_id];
         echo json_encode($arr);
+    } else {
+        echo json_encode("");
     }
 
 }
