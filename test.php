@@ -6,4 +6,5 @@ require "header.htm";
 $sender = "alvin@otanga.co.ke";
 $receiver = "jvn@mit";
 
-echo get_chat(32);
+$chat = get_chat(25);
+echo $chat;

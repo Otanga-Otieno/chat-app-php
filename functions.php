@@ -176,11 +176,11 @@ function get_chat($id) {
     $stmt = $conn->prepare("SELECT encrypted_message, passphrase, iv, tag FROM chat WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
-    $result = $stmt->get_result();
-    $array = $result->fetch_all();
+    $stmt->bind_result($enc, $key, $iv, $tag);
+    $stmt->fetch();
 
-    $tag = hex2bin($row[3]);
-    $message = openssl_decrypt($row[0], $cipher, $row[1], $options=0, $row[2], $tag);
+    $tag = hex2bin($tag);
+    $message = openssl_decrypt($enc, $cipher, $key, $options=0, $iv, $tag);
     return $message;
 
 }
