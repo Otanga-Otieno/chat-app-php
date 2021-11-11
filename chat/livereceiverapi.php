@@ -2,20 +2,15 @@
 
 require "../functions.php";
 
-if($_SERVER['REQUEST_METHOD'] == "POST") {
+if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['lcid'])) {
 
     $sender = $_POST['user'];
     $receiver = $_POST['receiver'];
-    $latest_id = get_latest_chat_id($sender, $receiver);
+    $latest_id = $_POST['lcid'];
     $new_id = get_latest_chat_id($sender, $receiver);
 
-    while ($latest_id == $new_id) {
-
-        sleep(3000);
-        $new_id = get_latest_chat_id($sender, $receiver);
-        
+    if($latest_id != $new_id) {
+        echo get_chat($new_id);
     }
-    
-    echo get_chat($new_id);
 
 }

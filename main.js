@@ -108,8 +108,10 @@ function receiveMessage(message) {
 
 async function livereceiver(user, receiver) {
     
+    var lcid = document.getElementById("lcid").textContent;
     var bodyParams = new URLSearchParams('user=' + user);
     bodyParams.append("receiver", receiver);
+    bodyParams.append("lcid", lcid);
 
     let response = await fetch("livereceiverapi.php", {
         method: 'POST',
