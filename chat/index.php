@@ -11,7 +11,7 @@ $sender = $_SESSION['user'];
 
 <script ></script>
 
-<body>
+<body onload="livereceiving('<?php echo $sender; ?>', '<?php echo $receiver; ?>');">
     
     <div class="container">
     
