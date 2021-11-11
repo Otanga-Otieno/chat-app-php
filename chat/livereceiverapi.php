@@ -2,7 +2,7 @@
 
 require "../functions.php";
 
-if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['lcid'])) {
+if(($_SERVER['REQUEST_METHOD'] == "POST") && isset($_POST['lcid'])) {
 
     $sender = $_POST['user'];
     $receiver = $_POST['receiver'];
