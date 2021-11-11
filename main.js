@@ -115,7 +115,6 @@ function receiveMessage(message, id) {
 async function livereceiver(user, receiver) {
 
     const delay = ms => new Promise(res => setTimeout(res, ms));
-    delay(10000);
 
     var latestChat = document.getElementById("lcid");
     var lcid = latestChat.textContent;
@@ -143,6 +142,7 @@ async function livereceiver(user, receiver) {
 
         data
         .then(res => receiveMessage(res[0], res[1]))
+        delay(10000);
 
         await livereceiver(user, receiver);
 
