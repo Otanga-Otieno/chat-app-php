@@ -14,7 +14,7 @@ if(($_SERVER['REQUEST_METHOD'] == "POST") && isset($_POST['lcid'])) {
         $arr = [$message, $new_id];
         echo json_encode($arr);
     } else {
-        echo json_encode("");
+        echo json_encode(["", ""]);
     }
 
 }
