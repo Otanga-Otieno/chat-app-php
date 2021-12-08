@@ -53,6 +53,17 @@ function check_active_user($user) {
 
 }
 
+function isDeactivated($user) {
+
+    if(check_user($user)) {
+        if(!check_active($user)) {
+            return true;
+        } 
+    }
+    return false;
+    
+}
+
 function retrievePassword($user) {
 
     global $conn;
