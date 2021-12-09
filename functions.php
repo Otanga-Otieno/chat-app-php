@@ -46,6 +46,14 @@ function check_active($user) {
 
 }
 
+function activate($user, $active = 1) {
+    global $conn;
+    $stmt = $conn->prepare("UPDATE users SET uactive = ? WHERE uemail = ?");
+    $stmt->bind_param("is", $active, $user);
+    $stmt->execute();
+    $stmt->close();
+}
+
 
 function check_active_user($user) {
 
