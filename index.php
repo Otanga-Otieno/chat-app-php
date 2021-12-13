@@ -3,6 +3,7 @@
 require "header.htm";
 require "functions.php";
 
+must_login("./sign-in");
 $all = all_users();
 
 ?>
