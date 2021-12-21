@@ -3,6 +3,15 @@
 require "../header.htm";
 require "../functions.php";
 
+$redirectUri = 'http://localhost:8000/Google-OAuth2/gauth.php';
+   
+$client = new Google_Client();
+$client->setClientId(GClient::CLIENT_ID);
+$client->setClientSecret(GClient::CLIENT_SECRET);
+$client->setRedirectUri($redirectUri);
+$client->addScope("email");
+$client->addScope("profile");
+
 ?>
 
 
@@ -24,7 +33,7 @@ require "../functions.php";
 
         <button class="m-2 btn" type="submit" style="background-color: #77d7c8;" name="signin">Sign In</button><br>
 
-        <a class="m-1 btn btn-outline-dark" href="'.$client->createAuthUrl().'" role="button" style="text-transform:none">
+        <a class="m-1 btn btn-outline-dark" href="<?php $client->createAuthUrl(); ?>" role="button" style="text-transform:none">
             <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />Login with Google
         </a>
     </form>
