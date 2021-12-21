@@ -2,6 +2,7 @@
 
 require "../header.htm";
 require "../functions.php";
+require "../vendor/autoload.php";
 
 $redirectUri = 'https://otanga.co.ke/Projects/Chat-App-PHP/gauth.php';
    
