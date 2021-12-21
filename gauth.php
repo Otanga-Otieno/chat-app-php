@@ -6,6 +6,8 @@ require "vendor/autoload.php";
 $client = new Google_Client();
 $client->setClientId(GClient::CLIENT_ID);
 $client->setClientSecret(GClient::CLIENT_SECRET);
+$client->addScope("email");
+$client->addScope("profile");
 
 if (isset($_GET['code'])) {
   $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
