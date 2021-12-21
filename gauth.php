@@ -30,6 +30,7 @@ if (isset($_GET['code'])) {
       header("Location: ./");
     } else {
       create_google_user($email);
+      login($email);
       header("Location: ./");
     }
   
