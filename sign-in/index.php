@@ -1,6 +1,7 @@
 <?php
 
 require "../header.htm";
+require "../functions.php";
 
 ?>
 
