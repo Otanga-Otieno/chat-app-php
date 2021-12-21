@@ -22,7 +22,7 @@ function create_google_user($email, $active = 1) {
 
     global $conn;
 
-    $stmt = $conn->prepare("INSERT INTO users_google(uemail, uactive) VALUES(?,?)");
+    $stmt = $conn->prepare("INSERT INTO users_google(g_email, uactive) VALUES(?,?)");
     $stmt->bind_param("si", $email, $active);
     $stmt->execute();
     $stmt->close();
