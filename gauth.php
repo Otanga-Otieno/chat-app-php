@@ -1,7 +1,7 @@
 <?php
 
 require "functions.php";
-require "../vendor/autoload.php";
+require "vendor/autoload.php";
 
 $client = new Google_Client();
 $client->setClientId(GClient::CLIENT_ID);
