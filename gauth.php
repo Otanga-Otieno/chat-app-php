@@ -14,7 +14,8 @@ if (isset($_GET['code'])) {
   if(isset($token['access_token'])) {
     $client->setAccessToken($token['access_token']);
   } else {
-    header("Location: sign-in/");
+    //header("Location: sign-in/");
+    print_r($client);
   }
    
   $google_oauth = new Google_Service_Oauth2($client);
