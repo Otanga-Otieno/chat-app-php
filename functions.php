@@ -18,11 +18,36 @@ function create_user($email, $passwordHash, $active = 1) {
 
 }
 
+function create_google_user($email, $active = 1) {
+
+    global $conn;
+
+    $stmt = $conn->prepare("INSERT INTO users_google(uemail, uactive) VALUES(?,?)");
+    $stmt->bind_param("si", $email, $active);
+    $stmt->execute();
+    $stmt->close();
+
+}
+
 function check_user($user) {
 
     global $conn;
 
     $stmt = $conn->prepare("SELECT id FROM users WHERE uemail = ?");
+    $stmt->bind_param("s", $user);
+    $stmt->execute();
+    $stmt->bind_result($result);
+    $stmt->fetch();
+    $stmt->close();
+    return isset($result) ? true : false;
+
+}
+
+function check_google_user($user) {
+
+    global $conn;
+
+    $stmt = $conn->prepare("SELECT id FROM users_google WHERE g_email = ?");
     $stmt->bind_param("s", $user);
     $stmt->execute();
     $stmt->bind_result($result);
