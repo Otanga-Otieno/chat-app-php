@@ -3,7 +3,7 @@
 require "../header.htm";
 require "../functions.php";
 
-$redirectUri = 'http://localhost:8000/Google-OAuth2/gauth.php';
+$redirectUri = 'https://otanga.co.ke/Projects/Chat-App-PHP/gauth.php';
    
 $client = new Google_Client();
 $client->setClientId(GClient::CLIENT_ID);
