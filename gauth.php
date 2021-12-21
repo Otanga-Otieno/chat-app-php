@@ -1,13 +1,18 @@
 <?php
 
 require "functions.php";
+require "../vendor/autoload.php";
+
+$client = new Google_Client();
+$client->setClientId(GClient::CLIENT_ID);
+$client->setClientSecret(GClient::CLIENT_SECRET);
 
 if (isset($_GET['code'])) {
   $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
   if(isset($token['access_token'])) {
     $client->setAccessToken($token['access_token']);
   } else {
-    header("Location: ".$_SERVER['PHP_SELF']);
+    header("Location: sign-in/");
   }
    
   $google_oauth = new Google_Service_Oauth2($client);
