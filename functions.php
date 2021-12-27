@@ -13,6 +13,69 @@ session_start();
 
 $conn = new mysqli(Config::SERVER_NAME, Config::USER_NAME, Config::PASSWORD, Config::DB_NAME);
 
+function exchangeCode($length) {
+
+    $bytes = random_bytes(($length)/2);
+    $exchange_code = bin2hex($bytes);
+    return $exchange_code;
+
+}
+
+function create_opt_out($email) {
+    
+    global $conn;
+    $dcode = exchangeCode(32);
+
+    $stmt = $conn->prepare("INSERT INTO deactivate(uemail, dcode) VALUES(?,?)");
+    $stmt->bind_param("ss", $email, $dcode);
+    $stmt->execute();
+    $stmt->close();
+
+}
+
+function get_opt_code($email) {
+
+    global $conn;
+
+    $stmt = $conn->prepare("SELECT dcode FROM deactivate WHERE uemail = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->bind_result($result);
+    $stmt->fetch();
+    $stmt->close();
+    return $result;
+
+}
+
+function send_opt_out_email($email, $dcode) {
+
+    $url = "https://otanga.co.ke/Projects/Chat-App-PHP/";
+    $link = $url."opt-out.php?user=$email&code=$dcode";
+    $body = "<div style='background-color: black; text-align: center;'><h2>OurChat</h2></div> <div style='text-align: center; color: black; background-color: #77d7c8; padding: 5%;'><p>Thank you for choosing OurChat. </p><p>Visit <a href='$url'>OurChat</a> to talk to friends in real time. </p><br><br><span style='font-size: 0.85em;'>Didn't sign up? <a href='$link'>opt out</a> of OurChat.</span> </div>";
+    $altbody = "Thank you for choosing OurChat. Visit https://otanga.co.ke/Projects/Chat-App-PHP/  to talk to friends in real time. \n\nDidn't sign up? Use the link below to opt out of OurChat. \n$link";
+    $subject = "WELCOME";
+    send_email($email, $subject, $body, $altbody);
+
+}
+
+function verify_opt_out($user, $code) {
+
+    global $conn;
+
+    $stmt = $conn->prepare("SELECT uemail FROM deactivate WHERE dcode = ?");
+    $stmt->bind_param("s", $code);
+    $stmt->execute();
+    $stmt->bind_result($result);
+    $stmt->fetch();
+    $stmt->close();
+
+    if($result == $user) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
 
 function create_user($email, $passwordHash, $active = 1) {
 
@@ -22,6 +85,8 @@ function create_user($email, $passwordHash, $active = 1) {
     $stmt->bind_param("ssi", $email, $passwordHash, $active);
     $stmt->execute();
     $stmt->close();
+
+    create_opt_out($email);
 
 }
 
