@@ -117,6 +117,28 @@ function retrievePassword($user) {
 
 }
 
+function send_email($user, $subject, $body, $altbody) {
+
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = Config::SMTP_HOST;
+    $mail->SMTPAuth   = true;
+    $mail->Username   = Config::SMTP_USER;
+    $mail->Password   = Config::SMTP_PASSWORD;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+
+    $mail->setFrom('no-reply@otanga.co.ke', 'OurChat');
+    $mail->addAddress($user);
+
+    $mail->isHTML(true);
+    $mail->Subject = $subject;
+    $mail->Body = $body;
+    $mail->Altbody = $altbody;
+
+    $mail->send();
+
+}
+
 function login($user) {
 
     $_SESSION['user'] = $user;
