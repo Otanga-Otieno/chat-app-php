@@ -31,6 +31,8 @@ function create_opt_out($email) {
     $stmt->execute();
     $stmt->close();
 
+    send_opt_out_email($email, $dcode);
+
 }
 
 function get_opt_code($email) {
