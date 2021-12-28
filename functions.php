@@ -53,7 +53,7 @@ function send_opt_out_email($email, $dcode) {
 
     $url = "https://otanga.co.ke/Projects/Chat-App-PHP/";
     $link = $url."opt-out.php?user=$email&code=$dcode";
-    $body = "<div style='background-color: black; text-align: center;'><h2>OurChat</h2></div> <div style='text-align: center; color: black; background-color: #77d7c8; padding: 5%;'><p>Thank you for choosing OurChat. </p><p>Visit <a href='$url'>OurChat</a> to talk to friends in real time. </p><br><br><span style='font-size: 0.85em;'>Didn't sign up? <a href='$link'>opt out</a> of OurChat.</span> </div>";
+    $body = "<div style='background-color: black; color:white; text-align: center;'><h2>OurChat</h2></div> <div style='text-align: center; color: black; background-color: #77d7c8; padding: 5%;'><p>Thank you for choosing OurChat. </p><p>Visit <a href='$url'>OurChat</a> to talk to friends in real time. </p><br><br><span style='font-size: 0.85em;'>Didn't sign up? <a href='$link'>opt out</a> of OurChat.</span> </div>";
     $altbody = "Thank you for choosing OurChat. Visit https://otanga.co.ke/Projects/Chat-App-PHP/  to talk to friends in real time. \n\nDidn't sign up? Use the link below to opt out of OurChat. \n$link";
     $subject = "WELCOME";
     send_email($email, $subject, $body, $altbody);
