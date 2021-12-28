@@ -4,7 +4,7 @@ require "functions.php";
 
 $user = $_GET['user'];
 $code = $_GET['code'];
-$bool = verify_exchange($user, $code);
+$bool = verify_opt_out($user, $code);
 
 if ($bool) {
 
