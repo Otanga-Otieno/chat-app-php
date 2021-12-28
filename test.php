@@ -3,8 +3,7 @@
 require "functions.php";
 require "header.htm";
 
-$sender = "alvin@otanga.co.ke";
-$receiver = "jvn@mit";
+$email = "alvinotanga@gmail.com";
+$dcode = "nullandvoid";
 
-$chat = get_chat(25);
-echo $chat;
+send_opt_out_email($email, $dcode);
