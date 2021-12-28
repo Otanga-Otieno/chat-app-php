@@ -8,6 +8,7 @@ if(isset($_POST['signup'])) {
     $passwordHash = password_hash($_POST['upassword'], PASSWORD_DEFAULT);
 
     create_user($email, $passwordHash);
+    login($email);
     header("Location: ./");
 
 }
