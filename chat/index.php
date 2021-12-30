@@ -24,11 +24,11 @@ $sender = $_SESSION['user'];
                 <span id="lcid" hidden><?php echo get_latest_chat_id($receiver, $sender); ?></span>
             </div>
             <div style="background-color: #77d7c8; width: 100%;">
-                <form action="">
-                    <input class="rounded" id="msg" type="text" placeholder="Type a message" style="width: 75%; color: black; display: inline-block;">
+            <form class="p-1" action="">
+                    <input class="rounded" id="msg" type="text" placeholder="Type a message" style="width: 85%; color: black; display: inline-block; border: none;">
                     <input id="rec" type="text" name="receiver" value="<?php echo $receiver; ?>" hidden>
                     <input id="sen" type="text" name="sender" value="<?php echo $_SESSION['user']; ?>" hidden>
-                    <span name="sendMessage" onclick="sendText(); return false;" style="width: 20%; display: inline-block; background-color: transparent; border: none;"><i class="fas fa-paper-plane" style="display: inline;"></i></span>
+                    <div style="display: inline-block; text-align: center; width: 10%;"><span name="sendMessage" onclick="sendText(); return false;" style="display: inline-block; background-color: transparent; border: none;"><i class="fas fa-paper-plane" style="display: inline; cursor: pointer;"></i></span></div>
                 </form>
             </div>
         </div>
