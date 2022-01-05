@@ -197,6 +197,17 @@ function retrieveEmail($username) {
     $stmt->bind_result($result);
     $stmt->fetch();
     $stmt->close();
+    $len = strlen($result);
+
+    if($len < 1) {
+        $stmt2 = $conn->prepare("SELECT g_email FROM users_google WHERE username = ?");
+        $stmt2->bind_param("s", $username);
+        $stmt2->execute();
+        $stmt2->bind_result($result2);
+        $stmt2->fetch();
+        $stmt2->close();
+        return $result2;
+    }
 
     return $result;
 
