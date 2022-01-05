@@ -231,14 +231,14 @@ function all_users() {
     global $conn;
     $all = array();
 
-    $stmt = $conn->prepare("SELECT uemail FROM users");
+    $stmt = $conn->prepare("SELECT username FROM users");
     $stmt->execute();
     $stmt->bind_result($result);
     while($stmt->fetch()) {
         array_push($all, $result);
     }
 
-    $stmt2 = $conn->prepare("SELECT g_email FROM users_google");
+    $stmt2 = $conn->prepare("SELECT username FROM users_google");
     $stmt2->execute();
     $stmt2->bind_result($result2);
     while($stmt2->fetch()) {
@@ -255,7 +255,7 @@ function search_users($str) {
     $all = array();
     $regex = "%".$str."%";
 
-    $stmt = $conn->prepare("SELECT uemail FROM users WHERE uemail LIKE ?");
+    $stmt = $conn->prepare("SELECT username FROM users WHERE uemail LIKE ?");
     $stmt->bind_param("s", $regex);
     $stmt->execute();
     $stmt->bind_result($result);
@@ -263,7 +263,7 @@ function search_users($str) {
         array_push($all, $result);
     }
 
-    $stmt2 = $conn->prepare("SELECT g_email FROM users_google WHERE g_email LIKE ?");
+    $stmt2 = $conn->prepare("SELECT username FROM users_google WHERE g_email LIKE ?");
     $stmt2->bind_param("s", $regex);
     $stmt2->execute();
     $stmt2->bind_result($result2);
