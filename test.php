@@ -9,7 +9,7 @@ require "header.htm";
 
 $name = "tydollar";
 $email = retrieveEmail($name);
-$name2 = "bla";
+$name2 = "otanga";
 $email2 = retrieveEmail($name2);
 
 echo $email;
