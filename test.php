@@ -8,5 +8,8 @@ require "functions.php";
 require "header.htm";
 
 $name = "tydollar";
+$email = retrieveEmail($name);
 
-echo retrieveEmail($name);
+echo $email;
+echo nl2br("\n");
+print_r($email);
