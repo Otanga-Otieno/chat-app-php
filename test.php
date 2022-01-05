@@ -9,7 +9,14 @@ require "header.htm";
 
 $name = "tydollar";
 $email = retrieveEmail($name);
+$email2 = "bla";
 
 echo $email;
 echo nl2br("\n");
-print_r($email);
+$len = strlen($email);
+echo $len;
+
+echo $email2;
+echo nl2br("\n");
+$len2 = strlen($email2);
+echo $len2;
