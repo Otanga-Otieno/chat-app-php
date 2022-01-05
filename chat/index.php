@@ -4,7 +4,8 @@ require "../header.htm";
 require "../functions.php";
 must_login("../sign-in");
 
-$receiver = $_GET['to'];
+$receiver_username = $_GET['to'];
+$receiver = retrieveEmail($receiver_username);
 $sender = $_SESSION['user'];
 
 ?>
@@ -17,7 +18,7 @@ $sender = $_SESSION['user'];
     
         <div class="m-5 rounded" style="border: white solid 1px;">
             <div style="background-color: #77d7c8; text-align: center; width: 100%;">
-                <span><h3 style="color: white;"><?php echo $receiver; ?></h3></span>
+                <span><h3 style="color: white;"><?php echo $receiver_username; ?></h3></span>
             </div>
             <div class="p-2" id="chatbox" style="background-color: white; height: 70vh; width: 100%; overflow-y: scroll;">
                 <?php get_chats($sender, $receiver); ?>
