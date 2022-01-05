@@ -1,9 +1,12 @@
 <?php
 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 require "functions.php";
 require "header.htm";
 
-$email = "alvinotanga@gmail.com";
-$dcode = "nullandvoid";
+$name = "tydollar";
 
-send_opt_out_email($email, $dcode);
+echo retrieveEmail($name);
