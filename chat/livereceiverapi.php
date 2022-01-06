@@ -2,6 +2,8 @@
 
 require "../functions.php";
 
+//Check if latest chat id from user is same as latest chat id from database. Update chats accordingly
+
 if(($_SERVER['REQUEST_METHOD'] == "POST") && isset($_POST['lcid'])) {
 
     $sender = $_POST['user'];
