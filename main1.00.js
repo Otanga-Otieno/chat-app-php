@@ -10,6 +10,8 @@ function verifyUsername(b) {
 
     var unameWarning = document.getElementById("usernameWarning");
     var signupButton = document.getElementById("signupBtn");
+    console.log(b);
+    console.log(typeof(b));
 
     if(b == 1) {
         unameWarning.removeAttribute("hidden");
