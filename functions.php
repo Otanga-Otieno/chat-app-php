@@ -25,6 +25,7 @@ function exchangeCode($length) {
 
 }
 
+//send email on account creation with option to deactivate. Use deactivation code to authenticate deactivation.
 function create_opt_out($email) {
     
     global $conn;
