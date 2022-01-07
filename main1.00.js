@@ -14,9 +14,11 @@ function verifyUsername(b) {
     if(b == 1) {
         unameWarning.removeAttribute("hidden");
         signupButton.disabled = true;
+        console.log("1 working");
     } else {
         unameWarning.setAttribute("hidden", true);
         signupButton.disabled = false;
+        console.log("0 working")
     }
 
 }
