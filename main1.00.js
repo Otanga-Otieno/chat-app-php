@@ -27,6 +27,7 @@ function fetchUsername(name) {
         method: 'POST',
         body: new URLSearchParams('name=' + name)
     })
+    .then(res => console.log(res))
     .then(res => verifyUsername(res))
     .catch(e => console.error('Error: ' + e))
 

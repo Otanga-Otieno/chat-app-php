@@ -6,6 +6,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $name = $_POST['name'];
     $bool = check_username($name);
-    var_dump($bool);
+    
+    if($bool) {
+        echo 1;
+    } else {
+        echo 0;
+    }
 
 }
