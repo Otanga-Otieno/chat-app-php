@@ -16,6 +16,12 @@ require "../header.htm";
         <br>
 
         <label for="">
+            <span>Username: </span><br>
+            <input type="text" name="username">
+        </label>
+        <br>
+
+        <label for="">
             <span>Password: </span><br>
             <input type="password" name="upassword">
         </label>
