@@ -32,7 +32,6 @@ function fetchUsername(name) {
         body: new URLSearchParams('name=' + name)
     })
     .then(res => res.json())
-    .then(res => console.log(res))
     .then(res => verifyUsername(res))
     .catch(e => console.error('Error: ' + e))
 
