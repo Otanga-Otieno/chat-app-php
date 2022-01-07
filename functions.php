@@ -122,6 +122,30 @@ function check_user($user) {
 
 }
 
+function check_username($username) {
+
+    global $conn;
+
+    $stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->bind_result($result);
+    $stmt->fetch();
+    $stmt->close();
+
+    if(!isset($result)) {
+        $stmt = $conn->prepare("SELECT id FROM users_google WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $stmt->bind_result($result);
+        $stmt->fetch();
+        $stmt->close();
+    }
+
+    return isset($result) ? true : false;
+
+}
+
 function check_google_user($user) {
 
     global $conn;

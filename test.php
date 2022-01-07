@@ -7,18 +7,8 @@ error_reporting(E_ALL);
 require "functions.php";
 require "header.htm";
 
-$name = "tydollar";
-$email = retrieveEmail($name);
-$name2 = "otanga";
-$email2 = retrieveEmail($name2);
+$bool1 = check_username("alvino10g");
+$bool2 = check_username("neumann1");
+$bool3 = check_username("blabla");
 
-echo $email;
-echo nl2br("\n");
-$len = strlen($email);
-echo $len;
-echo nl2br("\n");
-
-echo $email2;
-echo nl2br("\n");
-$len2 = strlen($email2);
-echo $len2;
+echo nl2br($bool1."\n".$bool2."\n".$bool3);
