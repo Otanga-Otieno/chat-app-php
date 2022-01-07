@@ -17,7 +17,7 @@ require "../header.htm";
 
         <label for="">
             <span>Username: </span><br>
-            <input type="text" name="username" onblur="searchUsername(this.value)"><br>
+            <input type="text" name="username" oninput="searchUsername(this.value)"><br>
             <span id="usernameWarning" style="color: red !important;" hidden>Username already exists!</span>
         </label>
         <br>
