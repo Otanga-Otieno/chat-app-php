@@ -20,7 +20,7 @@ function searchUsername(name) {
 
 function fetchSearch(name) {
 
-    fetch('usearch.php', {
+    fetch('https://otanga.co.ke/Projects/Chat-App-PHP/usearch.php', {
         method: 'POST',
         body: new URLSearchParams('name=' + name)
     })
