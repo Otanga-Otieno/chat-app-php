@@ -11,16 +11,6 @@ $bool1 = check_username("alvino10g");
 $bool2 = check_username("neumann1");
 $bool3 = check_username("blabla");
 
-print_r($bool1);
-echo nl2br("\n");
-print_r($bool2);
-echo nl2br("\n");
-print_r($bool3);
-
-echo nl2br("\n");
-
-var_dump($bool1);
-echo nl2br("\n");
-var_dump($bool2);
-echo nl2br("\n");
-var_dump($bool3);
+$name = "otanga";
+$bool = check_username($name);
+var_dump($bool);
