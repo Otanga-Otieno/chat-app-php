@@ -6,7 +6,7 @@ require "../header.htm";
 
 
 <div class="container" style="background-color: #77d7c8;">
-    <form class="p-3 rounded uform" action="../forms.php" method="POST">
+    <form class="p-3 rounded uform" action="../forms.php" method="POST" autocomplete="off">
         <span><h3>Sign Up</h3></span>
         
         <label for="">
