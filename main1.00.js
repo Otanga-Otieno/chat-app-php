@@ -2,6 +2,22 @@ function searchUser(name) {
     fetchSearch(name);
 }
 
+function searchUsername(name) {
+
+    var namelist = fetchSearch(name);
+    var unameWarning = document.getElementById("usernameWarning");
+    var signupButton = document.getElementById("signupBtn");
+
+    if(namelist != null) {
+        unameWarning.removeAttribute("hidden");
+        signupButton.disabled = true;
+    } else {
+        unameWarning.setAttribute("hidden", true);
+        signupButton.disabled = false;
+    }
+
+}
+
 function fetchSearch(name) {
 
     fetch('usearch.php', {

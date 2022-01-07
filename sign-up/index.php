@@ -17,7 +17,8 @@ require "../header.htm";
 
         <label for="">
             <span>Username: </span><br>
-            <input type="text" name="username">
+            <input type="text" name="username" oninput="searchUsername(this.value)">
+            <span id="usernameWarning" style="color: red !important;">Username already exists!</span>
         </label>
         <br>
 
@@ -27,6 +28,6 @@ require "../header.htm";
         </label>
         <br>
 
-        <button class="m-2 btn" type="submit" style="background-color: #77d7c8;" name="signup">Sign Up</button>
+        <button class="m-2 btn" id="signupBtn" type="submit" style="background-color: #77d7c8;" name="signup">Sign Up</button>
     </form>
 </div>
