@@ -3,18 +3,32 @@ function searchUser(name) {
 }
 
 function searchUsername(name) {
+    fetchUsername(name);
+}
 
-    var namelist = fetchSearch(name);
+function verifyUsername(b) {
+
     var unameWarning = document.getElementById("usernameWarning");
     var signupButton = document.getElementById("signupBtn");
 
-    if(namelist != null) {
+    if(b == 1) {
         unameWarning.removeAttribute("hidden");
         signupButton.disabled = true;
     } else {
         unameWarning.setAttribute("hidden", true);
         signupButton.disabled = false;
     }
+
+}
+
+function fetchUsername(name) {
+
+    fetch('https://otanga.co.ke/Projects/Chat-App-PHP/unameverify.php', {
+        method: 'POST',
+        body: new URLSearchParams('name=' + name)
+    })
+    .then(res => verifyUsername(res))
+    .catch(e => console.error('Error: ' + e))
 
 }
 
