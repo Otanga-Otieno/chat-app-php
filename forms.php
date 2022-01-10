@@ -5,9 +5,13 @@ require "functions.php";
 if(isset($_POST['signup'])) {
 
     $email = $_POST['uemail'];
+    $username = $_POST['username'];
+    if(check_username($username)) {
+        header("Location: signup/");
+    }
     $passwordHash = password_hash($_POST['upassword'], PASSWORD_DEFAULT);
 
-    create_user($email, $passwordHash);
+    create_user($email, $username, $passwordHash);
     login($email);
     header("Location: ./");
 

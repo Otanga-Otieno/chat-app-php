@@ -84,12 +84,12 @@ function verify_opt_out($user, $code) {
 
 }
 
-function create_user($email, $passwordHash, $active = 1) {
+function create_user($email, $username, $passwordHash, $active = 1) {
 
     global $conn;
 
-    $stmt = $conn->prepare("INSERT INTO users(uemail, passwordHash, uactive) VALUES(?,?,?)");
-    $stmt->bind_param("ssi", $email, $passwordHash, $active);
+    $stmt = $conn->prepare("INSERT INTO users(uemail, username, passwordHash, uactive) VALUES(?,?,?,?)");
+    $stmt->bind_param("ssi", $email, $username, $passwordHash, $active);
     $stmt->execute();
     $stmt->close();
 
