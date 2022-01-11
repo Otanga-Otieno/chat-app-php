@@ -33,7 +33,7 @@ if (isset($_GET['code'])) {
 
     echo '
       <div class="container" style="background-color: #77d7c8;">
-      <form class="p-3 rounded uform" action="../forms.php" method="POST" autocomplete="off">
+      <form class="p-3 rounded uform" action="forms.php" method="POST" autocomplete="off">
           <span><h3>Username</h3></span>
 
           <label for="">
