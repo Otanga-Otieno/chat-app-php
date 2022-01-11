@@ -17,6 +17,20 @@ if(isset($_POST['signup'])) {
 
 }
 
+if(isset($_POST['GsignupBtn'])) {
+
+    $email = $_POST['g_email'];
+    $username = $_POST['username'];
+    if(check_username($username)) {
+        header("Location: signup/");
+    }
+
+    create_google_user($email, $username);
+    login($email);
+    header("Location: ./");
+
+}
+
 if(isset($_POST['signin'])) {
 
     $email = $_POST['uemail'];

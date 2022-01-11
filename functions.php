@@ -97,12 +97,12 @@ function create_user($email, $username, $passwordHash, $active = 1) {
 
 }
 
-function create_google_user($email, $active = 1) {
+function create_google_user($email, $username, $active = 1) {
 
     global $conn;
 
-    $stmt = $conn->prepare("INSERT INTO users_google(g_email, uactive) VALUES(?,?)");
-    $stmt->bind_param("si", $email, $active);
+    $stmt = $conn->prepare("INSERT INTO users_google(g_email, username, uactive) VALUES(?,?,?)");
+    $stmt->bind_param("ssi", $email, $username, $active);
     $stmt->execute();
     $stmt->close();
 
