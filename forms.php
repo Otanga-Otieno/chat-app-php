@@ -17,7 +17,7 @@ if(isset($_POST['signup'])) {
 
 }
 
-if(isset($_POST['GsignupBtn'])) {
+if(isset($_POST['Gsignup'])) {
 
     $email = $_POST['g_email'];
     $username = $_POST['username'];
