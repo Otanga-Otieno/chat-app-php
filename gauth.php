@@ -44,7 +44,7 @@ if (isset($_GET['code'])) {
           </label>
           <br>
 
-          <button class="m-2 btn" id="GsignupBtn" type="submit" style="background-color: #77d7c8;" name="Gsignup">Sign Up</button>
+          <button class="m-2 btn" id="signupBtn" type="submit" style="background-color: #77d7c8;" name="Gsignup">Sign Up</button>
       </form>
       </div>
     ';
