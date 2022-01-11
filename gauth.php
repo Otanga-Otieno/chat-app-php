@@ -39,7 +39,7 @@ if (isset($_GET['code'])) {
           <label for="">
               <span>Username: </span><br>
               <input type="text" name="username" oninput="searchUsername(this.value)"><br>
-              <input type="text" name="g_email" value="'.$email.'" hiddden>
+              <input type="text" name="g_email" value="'.$email.'" hidden>
               <span id="usernameWarning" style="color: red !important;" hidden>Username already exists!</span>
           </label>
           <br>
