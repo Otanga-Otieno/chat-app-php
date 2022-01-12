@@ -124,6 +124,10 @@ function receiveMessage(message, id) {
         return;
     }
 
+    if(latestChat.textContent == id) {
+        return;
+    }
+
     const chatbox = document.getElementById("chatbox");
     const span = document.createElement("span");
     const br = document.createElement("br");
