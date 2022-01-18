@@ -124,6 +124,7 @@ function receiveMessage(message, id) {
         return;
     }
 
+    //if latest chat is already received skip this function
     if(latestChat.textContent == id) {
         return;
     }
