@@ -8,6 +8,7 @@ if(($_SERVER['REQUEST_METHOD'] == "POST") && isset($_POST['lcid'])) {
 
     $sender = $_POST['user'];
     $receiver = $_POST['receiver'];
+    $receiver = retrieveEmail($receiver);
     $latest_id = $_POST['lcid'];
     $new_id = get_latest_chat_id($receiver, $sender);
 

@@ -7,6 +7,7 @@ if(($_SERVER['REQUEST_METHOD'] == "POST") && isset($_POST['message'])) {
     $message = $_POST['message'];
     $sender = $_POST['sender'];
     $receiver = $_POST['receiver'];
+    $receiver = retrieveEmail($receiver);
 
     $cipher = "aes-128-gcm";
     $key = bin2hex(openssl_random_pseudo_bytes(10));

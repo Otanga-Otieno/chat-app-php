@@ -12,7 +12,7 @@ $sender = $_SESSION['user'];
 
 <script ></script>
 
-<body onload="livereceiving('<?php echo $sender; ?>', '<?php echo $receiver; ?>');">
+<body onload="livereceiving('<?php echo $sender; ?>', '<?php echo $receiver_username; ?>');">
     
     <div class="container">
     
@@ -27,10 +27,10 @@ $sender = $_SESSION['user'];
             <div style="background-color: #77d7c8; width: 100%;">
             <form class="p-1" action="">
                     <input class="rounded" id="msg" type="text" placeholder="Type a message" style="width: 85%; color: black; display: inline-block; border: none;">
-                    <input id="rec" type="text" name="receiver" value="<?php echo $receiver; ?>" hidden>
+                    <input id="rec" type="text" name="receiver" value="<?php echo $receiver_username; ?>" hidden>
                     <input id="sen" type="text" name="sender" value="<?php echo $_SESSION['user']; ?>" hidden>
                     <div style="display: inline-block; text-align: center; width: 10%;"><span name="sendMessage" onclick="sendText(); return false;" style="display: inline-block; background-color: transparent; border: none;"><i class="fas fa-paper-plane" style="display: inline; cursor: pointer;"></i></span></div>
-                </form>
+            </form>
             </div>
         </div>
     
