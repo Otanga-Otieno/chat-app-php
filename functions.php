@@ -280,19 +280,21 @@ function must_login($redirect) {
 
 }
 
-function all_users() {
+function all_users($user) {
 
     global $conn;
     $all = array();
 
-    $stmt = $conn->prepare("SELECT username FROM users");
+    $stmt = $conn->prepare("SELECT username FROM users WHERE NOT(uemail = ?)");
+    $stmt->bind_param("s", $user);
     $stmt->execute();
     $stmt->bind_result($result);
     while($stmt->fetch()) {
         array_push($all, $result);
     }
 
-    $stmt2 = $conn->prepare("SELECT username FROM users_google");
+    $stmt2 = $conn->prepare("SELECT username FROM users_google WHERE NOT(g_email = ?)");
+    $stmt2->bind_param("s", $user);
     $stmt2->execute();
     $stmt2->bind_result($result2);
     while($stmt2->fetch()) {
