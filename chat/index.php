@@ -7,6 +7,7 @@ must_login("../sign-in");
 $receiver_username = $_GET['to'];
 $receiver = retrieveEmail($receiver_username);
 $sender = $_SESSION['user'];
+if($receiver == $sender) header("Location: ../");
 
 ?>
 
