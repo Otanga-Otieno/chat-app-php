@@ -16,7 +16,7 @@ $sender = $_SESSION['user'];
     
     <div class="container">
     
-        <div class="m-1 m-md-5 rounded" style="border: white solid 1px;">
+        <div class="m-2 m-md-5 rounded" style="border: white solid 1px;">
             <div style="background-color: #77d7c8; text-align: center; width: 100%;">
                 <span><h3 style="color: white;"><?php echo $receiver_username; ?></h3></span>
             </div>
