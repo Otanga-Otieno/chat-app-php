@@ -69,8 +69,8 @@ function showUserList(data) {
         span.appendChild(b);
         a.innerHTML = "Message";
         a.href = "chat/?to=" + data[i];
-        messageDiv.appendChild(span);
-        messageDiv.appendChild(br);
+        div.appendChild(span);
+        div.appendChild(br);
         messageDiv.appendChild(a);
         div.appendChild(messageDiv);
         uList.appendChild(div);
