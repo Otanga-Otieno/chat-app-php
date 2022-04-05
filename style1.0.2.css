@@ -7,7 +7,7 @@ body {
 }
 
 .mainbg {
-    background-color: var(--main-color);
+    background-color: var(--main-color) !important;
 }
 
 .maincolor {
