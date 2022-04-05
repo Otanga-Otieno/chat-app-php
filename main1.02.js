@@ -48,23 +48,25 @@ function fetchSearch(name) {
 function showUserList(data) {
 
     const uList = document.getElementById("userList");
+    const br = document.createElement("br");
     uList.innerHTML = "";
 
-    const sli = document.createElement("li");
-    const shr = document.createElement("hr");
-    uList.appendChild(sli);
-    uList.appendChild(shr);
-
     for(let i = 0; i < data.length; i++) {
-        const li = document.createElement("li");
-        const hr = document.createElement("hr");
+
+        const div = document.createElement("div");
+        const messageDiv = document.createElement("div");
+        const span = document.createElement("span");
         const a = document.createElement("a");
 
-        a.innerHTML = data[i];
+        span.innerHTML = data[i];
+        a.innerHTML = "Message";
         a.href = "chat/?to=" + data[i];
-        uList.appendChild(li);
-        li.appendChild(a);
-        uList.appendChild(hr);
+        messageDiv.appendChild(span);
+        messageDiv.appendChild(br);
+        messageDiv.appendChild(a);
+        div.appendChild(messageDiv);
+        uList.appendChild(div);
+        
     }
 
 }
