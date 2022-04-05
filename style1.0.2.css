@@ -3,11 +3,15 @@
 }
 
 body {
-    background-color: #111e6c !important;
+    background-color: var(--main-color) !important;
 }
 
-.main_color {
-    color: #111e6c !important;
+.mainbg {
+    background-color: var(--main-color);
+}
+
+.maincolor {
+    color: var(--main-color);
 }
 
 .uform {
