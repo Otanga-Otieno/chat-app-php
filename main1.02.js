@@ -58,6 +58,11 @@ function showUserList(data) {
         const span = document.createElement("span");
         const a = document.createElement("a");
 
+        div.classList.add("card", "py-3", "m-1");
+        span.style.color = "black";
+        messageDiv.style.width = "100%";
+        messageDiv.style.textAlign = "center";
+
         span.innerHTML = data[i];
         a.innerHTML = "Message";
         a.href = "chat/?to=" + data[i];
