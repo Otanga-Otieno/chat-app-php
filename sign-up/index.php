@@ -28,6 +28,6 @@ require "../header.htm";
         </label>
         <br>
 
-        <button class="m-2 btn main_color" id="signupBtn" type="submit" name="signup">Sign Up</button>
+        <button class="m-2 btn mainbg" id="signupBtn" type="submit" name="signup">Sign Up</button>
     </form>
 </div>
