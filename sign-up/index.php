@@ -29,5 +29,7 @@ require "../header.htm";
         <br>
 
         <button class="m-2 btn mainbg white" id="signupBtn" type="submit" name="signup">Sign Up</button>
+
+        <br><span><a href="../sign-in">Sign in instead</a></span><br>
     </form>
 </div>
