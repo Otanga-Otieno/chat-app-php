@@ -1,5 +1,13 @@
+:root {
+    --main-color: #111e6c;
+}
+
 body {
     background-color: #111e6c !important;
+}
+
+.main_color {
+    color: #111e6c !important;
 }
 
 .uform {
