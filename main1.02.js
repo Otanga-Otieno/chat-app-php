@@ -48,7 +48,6 @@ function fetchSearch(name) {
 function showUserList(data) {
 
     const uList = document.getElementById("userList");
-    const br = document.createElement("br");
     uList.innerHTML = "";
 
     for(let i = 0; i < data.length; i++) {
@@ -57,13 +56,17 @@ function showUserList(data) {
         const messageDiv = document.createElement("div");
         const span = document.createElement("span");
         const a = document.createElement("a");
+        const b = document.createElement("b");
+        const br = document.createElement("br");
 
         div.classList.add("card", "py-3", "m-1");
+        a.classList.add("btn", "mainbg", "white");
         span.style.color = "black";
         messageDiv.style.width = "100%";
         messageDiv.style.textAlign = "center";
 
-        span.innerHTML = data[i];
+        b.innerHTML = data[i];
+        span.appendChild(b);
         a.innerHTML = "Message";
         a.href = "chat/?to=" + data[i];
         messageDiv.appendChild(span);
