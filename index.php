@@ -19,7 +19,7 @@ $all = all_users($user);
         </form>
     
         <div class="p-2" id="userList" style="list-style-type: none; padding: 0; width: 100%;">
-            <li></li><hr>
+            <li></li><hr class="white">
         <?php foreach($all as $email) { ?>
             <div class="card py-3 m-1" style="text-align: center; width: 100%;">
                 <span style="color: black;"><b><?php echo $email; ?></b></span><br>
