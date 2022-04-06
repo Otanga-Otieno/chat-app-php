@@ -12,7 +12,8 @@ $all = all_users($user);
 
 <div class="container" style="text-align: center;">
 
-    <div>
+    <div class="p-3">
+        <a class="btn btn-danger" href="logout.php">LOG OUT</a>
         <form class="pt-3 mb-0" action="">
             <input class="rounded" style="width: 100%;" type="text" name="search" placeholder="Search global users" oninput="searchUser(this.value)" autocomplete="off">
         </form>
