@@ -311,7 +311,7 @@ function search_users($str) {
     $all = array();
     $regex = "%".$str."%";
 
-    $stmt = $conn->prepare("SELECT username FROM users WHERE uemail LIKE ?");
+    $stmt = $conn->prepare("SELECT username FROM users WHERE username LIKE ?");
     $stmt->bind_param("s", $regex);
     $stmt->execute();
     $stmt->bind_result($result);
@@ -319,7 +319,7 @@ function search_users($str) {
         array_push($all, $result);
     }
 
-    $stmt2 = $conn->prepare("SELECT username FROM users_google WHERE g_email LIKE ?");
+    $stmt2 = $conn->prepare("SELECT username FROM users_google WHERE username LIKE ?");
     $stmt2->bind_param("s", $regex);
     $stmt2->execute();
     $stmt2->bind_result($result2);
