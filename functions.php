@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
@@ -12,8 +14,6 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/SMTP.php';
 
 require "config.php";
-
-session_start();
 
 $conn = new mysqli(Config::SERVER_NAME, Config::USER_NAME, Config::PASSWORD, Config::DB_NAME);
 
