@@ -1,7 +1,9 @@
 <?php
 
-require "header.htm";
+session_start();
+
 require "functions.php";
+require "header.htm";
 
 must_login("./sign-in");
 $user = $_SESSION['user'];

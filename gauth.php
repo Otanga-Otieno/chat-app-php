@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require "functions.php";
 require "vendor/autoload.php";
 require "header.htm";
