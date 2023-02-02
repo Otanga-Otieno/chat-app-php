@@ -4,7 +4,6 @@ session_start();
 
 require "functions.php";
 require "vendor/autoload.php";
-require "header.htm";
 
 $client = new Google_Client();
 $client->setClientId(GClient::CLIENT_ID);
@@ -32,7 +31,7 @@ if (isset($_GET['code'])) {
     login($email);
     header("Location: ./");
   } else {
-
+    require "header.htm";
     echo '
       <div class="container" style="background-color: #77d7c8;">
       <form class="p-3 rounded uform" action="forms.php" method="POST" autocomplete="off">
