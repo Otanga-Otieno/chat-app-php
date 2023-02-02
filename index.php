@@ -3,11 +3,11 @@
 session_start();
 
 require "functions.php";
-require "header.htm";
-
 must_login("./sign-in");
 $user = $_SESSION['user'];
 $all = all_users($user);
+
+require "header.htm";
 
 ?>
 
